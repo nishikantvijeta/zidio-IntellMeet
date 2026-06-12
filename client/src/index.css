@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Inter', sans-serif;
+  --font-display: 'Outfit', sans-serif;
+
+  --color-brand-primary: #0066ff;
+  --color-brand-primary-hover: #0052cc;
+  --color-brand-accent: #7c3aed;
+  --color-brand-accent-hover: #6d28d9;
+
+  --color-surface-bg: #ffffff;
+  --color-surface-border: #e2e8f0;
+  --color-surface-hover: #f8fafc;
+}
+
+@layer base {
+  html, body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-sans);
+    scroll-behavior: smooth;
+    background-color: #fafafa;
+    color: #1e293b;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+
+  body {
+    background: #fafafa;
+    color: #1e293b;
+  }
+}
+
+@layer utilities {
+  .glass-panel {
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(226, 232, 240, 0.8);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.02), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  }
+
+  .glass-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02), 0 4px 12px rgba(0, 0, 0, 0.01);
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .glass-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0, 0, 0, 0.01);
+    border-color: #cbd5e1;
+  }
+
+  .glass-input {
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    color: #1e293b;
+    border-radius: 12px;
+    font-size: 13px;
+    transition: all 0.15s ease-in-out;
+  }
+
+  .glass-input:focus {
+    border-color: #0066ff;
+    box-shadow: 0 0 0 3px rgba(0, 102, 255, 0.12);
+    outline: none;
+  }
+
+  .gradient-text {
+    background: linear-gradient(135deg, #0066ff 0%, #7c3aed 50%, #db2777 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .gradient-bg-mesh {
+    background-color: #fafafa;
+    background-image: 
+      radial-gradient(at 0% 0%, rgba(0, 102, 255, 0.03) 0px, transparent 50%),
+      radial-gradient(at 100% 0%, rgba(124, 58, 237, 0.03) 0px, transparent 50%),
+      radial-gradient(at 50% 100%, rgba(219, 39, 119, 0.02) 0px, transparent 50%);
+  }
+
+  /* Linear-style clean outlines */
+  .border-hairline {
+    border: 1px solid #e2e8f0;
+  }
+}
+
+/* Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.08);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.16);
+}
+
+/* Clean animation markers */
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.15; }
+  50% { opacity: 0.3; }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 3s ease-in-out infinite;
+}
+
+/* Control animations */
+@keyframes subtleFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+.animate-subtle-float {
+  animation: subtleFloat 5s ease-in-out infinite;
+}
