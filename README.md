@@ -146,7 +146,7 @@ Kanban Board
 
 Nishikant Kumar
 
-GitHub: https://github.com/NishikantVijeta
+GitHub: https://github.com/nishikantvijeta
 Email: nishikantvijeta9060@gmail.com
 ## 📄 License
 
