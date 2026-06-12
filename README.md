@@ -126,3 +126,29 @@ npm run dev
 4. `raise-hand`: Emits user hand-raising states.
 5. `start-ai-bot`: Triggers the background chatbot dialogue simulation.
 6. `task-assigned`: Pushes database alerts to online developers immediately.
+## Screenshots
+Login & Authentication
+
+<img width="257" height="392" alt="image" src="https://github.com/user-attachments/assets/78bfd3c9-961b-4e49-a5d7-690142ff76d4" />
+
+
+Dashboard
+<img width="436" height="434" alt="image" src="https://github.com/user-attachments/assets/585085bc-213c-4602-87ff-291113e41a40" />
+
+<img width="1909" height="876" alt="image" src="https://github.com/user-attachments/assets/26f850d9-386e-4da0-9d27-895163f793b3" />
+
+Meeting Room
+<img width="1909" height="880" alt="image" src="https://github.com/user-attachments/assets/49e8e14b-870c-4372-a8a3-3bb84c669b49" />
+
+Kanban Board
+<img width="1918" height="879" alt="image" src="https://github.com/user-attachments/assets/201cd46a-7acf-4be0-a8fd-41bbdbe0c220" />
+## 👨‍💻 Author
+
+Nishikant Kumar
+
+GitHub: https://github.com/NishikantVijeta
+Email: nishikantvijeta9060@gmail.com
+## 📄 License
+
+This project was developed during an internship program for educational, research, and portfolio purposes.
+
