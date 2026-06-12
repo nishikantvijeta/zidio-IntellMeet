@@ -80,7 +80,8 @@ export const SocketProvider: React.FC<{ children: React.ReactNode }> = ({ childr
     }
 
     // Connect to server socket
-    const socketInstance = io(`http://${window.location.hostname}:5000`, {
+    const SOCKET_URL = import.meta.env.VITE_SOCKET_URL || `http://${window.location.hostname}:5000`;
+    const socketInstance = io(SOCKET_URL, {
       transports: ['websocket'],
       autoConnect: true
     });

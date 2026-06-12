@@ -14,7 +14,7 @@ const app = express();
 // Config CORS — allow localhost + LAN IPs (mobile on same hotspot)
 app.use(
   cors({
-    origin: true,
+    origin: process.env.CLIENT_URL || true,
     credentials: true
   })
 );

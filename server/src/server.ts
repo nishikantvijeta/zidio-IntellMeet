@@ -21,7 +21,7 @@ const startServer = async () => {
   // Initialize Socket.io Server
   const io = new Server(server, {
     cors: {
-      origin: true,
+      origin: process.env.CLIENT_URL || true,
       credentials: true
     }
   });

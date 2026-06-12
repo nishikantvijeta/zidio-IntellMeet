@@ -23,11 +23,12 @@ export class MailService {
   }
 
   static async sendVerificationEmail(email: string, username: string, token: string): Promise<void> {
-    const port = process.env.PORT || 5000;
-    const verificationUrl = `http://localhost:${port}/api/auth/verify?token=${token}`;
+    const serverUrl = process.env.SERVER_URL || `http://localhost:${process.env.PORT || 5000}`;
+    const verificationUrl = `${serverUrl}/api/auth/verify?token=${token}`;
     
     // We also want a link that points to the client's verification route
-    const clientUrl = `http://localhost:5173/verify?token=${token}`;
+    const clientBaseUrl = process.env.CLIENT_URL || 'http://localhost:5173';
+    const clientUrl = `${clientBaseUrl}/verify?token=${token}`;
     
     const transporter = this.getTransporter();
     const SMTP_FROM = process.env.SMTP_FROM || '"IntellMeet" <no-reply@intellmeet.com>';
@@ -73,7 +74,8 @@ export class MailService {
   }
 
   static async sendResetPasswordEmail(email: string, username: string, token: string): Promise<void> {
-    const clientUrl = `http://localhost:5173/reset-password?token=${token}`;
+    const clientBaseUrl = process.env.CLIENT_URL || 'http://localhost:5173';
+    const clientUrl = `${clientBaseUrl}/reset-password?token=${token}`;
     const transporter = this.getTransporter();
     const SMTP_FROM = process.env.SMTP_FROM || '"IntellMeet" <no-reply@intellmeet.com>';
 
