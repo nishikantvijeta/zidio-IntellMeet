@@ -57,6 +57,8 @@ export class MailService {
           html: htmlContent
         });
         logger.info(`Verification email sent to ${email}`);
+        logger.info(`Verification Link (Client): ${clientUrl}`);
+        logger.info(`Verification Link (API-Direct): ${verificationUrl}`);
         return;
       } catch (err) {
         logger.error(`Failed to send email via SMTP: ${err}. Falling back to console log.`);
@@ -103,6 +105,7 @@ export class MailService {
           html: htmlContent
         });
         logger.info(`Password reset email sent to ${email}`);
+        logger.info(`Reset Link (Client): ${clientUrl}`);
         return;
       } catch (err) {
         logger.error(`Failed to send password reset email via SMTP: ${err}. Falling back to console log.`);
